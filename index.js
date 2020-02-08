@@ -16,12 +16,15 @@ function promptUser() {
             message: "What is your GitHub username?"
         }])};
 
-    promptUser();
-
-/* Pass your questions in here */
-//   ])
-//   .then(answers => {
-//     // Use user feedback for... whatever!!
-//   });
-
-
+    promptUser()
+        .then(function(answers) {
+            const html = generateHTML(answers);
+        
+            return writeFileAsync("index.html", html);
+          })
+          .then(function() {
+            console.log("Successfully wrote to index.html");
+          })
+          .catch(function(err) {
+            console.log(err);
+          });
