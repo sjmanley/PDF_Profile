@@ -1,0 +1,28 @@
+{
+  "name": "pdf_profile",
+  "version": "1.0.0",
+  "description": "profile genrator PDF",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sjmanley/PDF_Profile.git"
+  },
+  "keywords": [
+    "PDF",
+    "Profile",
+    "Generator",
+    "GitHub"
+  ],
+  "author": "sjmanley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sjmanley/PDF_Profile/issues"
+  },
+  "homepage": "https://github.com/sjmanley/PDF_Profile#readme",
+  "dependencies": {
+    "inquirer": "^7.0.4"
+  }
+}
