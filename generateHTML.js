@@ -1,31 +1,32 @@
 const colors = {
   green: {
-    wrapperBackground: "#E6E1C3",
-    headerBackground: "#C1C72C",
-    headerColor: "black",
-    photoBorderColor: "#black"
+    wrapperBackground: '#E6E1C3',
+    headerBackground: '#C1C72C',
+    headerColor: 'black',
+    photoBorderColor: '#black',
   },
   blue: {
-    wrapperBackground: "#5F64D3",
-    headerBackground: "#26175A",
-    headerColor: "white",
-    photoBorderColor: "#73448C"
+    wrapperBackground: '#5F64D3',
+    headerBackground: '#26175A',
+    headerColor: 'white',
+    photoBorderColor: '#73448C',
   },
   pink: {
-    wrapperBackground: "#879CDF",
-    headerBackground: "#FF8374",
-    headerColor: "white",
-    photoBorderColor: "#FEE24C"
+    wrapperBackground: '#879CDF',
+    headerBackground: '#FF8374',
+    headerColor: 'white',
+    photoBorderColor: '#FEE24C',
   },
   red: {
-    wrapperBackground: "#DE9967",
-    headerBackground: "#870603",
-    headerColor: "white",
-    photoBorderColor: "white"
-  }
+    wrapperBackground: '#DE9967',
+    headerBackground: '#870603',
+    headerColor: 'white',
+    photoBorderColor: 'white',
+  },
 };
 
-function generateHTML(data) {
+
+generateHTML: function (data) {
   return `<!DOCTYPE html>
 <html lang="en">
    <head>
@@ -68,6 +69,7 @@ function generateHTML(data) {
          h1, h2, h3, h4, h5, h6 {
          font-family: 'BioRhyme', serif;
          margin: 0;
+         text-align: center;
          }
          h1 {
          font-size: 3em;
@@ -170,5 +172,53 @@ function generateHTML(data) {
             zoom: .75; 
           } 
          }
-      </style>`
-        }
+      </style>
+      </head>
+   <body>
+      <div class="wrapper">
+        <div class="photo-header">
+          <img src="${data.avatar_url}">
+          <h1>Hi!</h1>
+          <h2>My name is ${data.name}!</h2>
+          <h6>Currently @ ${data.company}</h6>
+          <div class="links-nav">
+            <a href="http://maps.google.com/?q=${data.location}" class="nav-link"><i class="fas fa-location-arrow"> ${data.location}</i></a>
+            <a href="${data.html_url}" class="nav-link"><i class="fab fa-github-alt"> GitHub</i></a>
+            <a href="${data.blog}" class="nav-link"><i class="fas fa-blog"> Portfolio</i></a>
+          </div>
+        </div>
+        <main>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <h3>${data.bio}</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col card">
+                <h3>Public Repositories</h3>
+                <h5>${data.public_repos}</h5>
+              </div>
+              <div class="col card">
+                <h3>Followers</h3>
+                <h5>${data.followers}</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col card">
+                <h3>GitHub Stars</h3>
+                <h5>${data.public_gists}</h5>
+              </div>
+              <div class="col card">
+                <h3>Following</h3>
+                <h5>${data.following}</h5>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+   </body>
+</html>`;
+}
+};
+module.exports = generateHTML;

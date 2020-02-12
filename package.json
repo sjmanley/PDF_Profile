@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/sjmanley/PDF_Profile#readme",
   "dependencies": {
+    "axios": "^0.19.2",
+    "html-pdf": "^2.2.0",
     "inquirer": "^7.0.4"
   }
 }
